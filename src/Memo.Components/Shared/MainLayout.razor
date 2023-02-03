@@ -2,11 +2,13 @@
 
 <MApp>
     <MMain>
-        <MContainer Fluid>
+        <MContainer Fluid Style="height: 100%;">
             @Body
         </MContainer>
-    </MMain>
-    <MFooter Padless>
-        <AppBar/>
-    </MFooter>
+        </MMain>
+        <MBottomNavigation Absolute
+                              HideOnScroll
+                              Horizontal>
+        <AppBar />
+    </MBottomNavigation>
 </MApp>

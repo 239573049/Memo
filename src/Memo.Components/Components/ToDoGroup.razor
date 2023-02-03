@@ -1,0 +1,21 @@
+﻿<MList Nav
+       Dense>
+    <MListItemGroup Color="primary">
+        @foreach (var item in ToDoGroupModel)
+        {
+            <MListItem OnClick="()=>GoAssignment(item)">
+                <MListItemIcon>
+                    <MIcon Color="blue darken-2">@item.Icon</MIcon>
+                </MListItemIcon>
+
+                <MListItemContent>
+                    <MListItemTitle>@item.Title</MListItemTitle>
+                </MListItemContent>
+                <MSpacer></MSpacer>
+                <span>
+                    @item.Count
+                </span>
+            </MListItem>
+        }
+    </MListItemGroup>
+</MList>

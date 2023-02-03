@@ -1,5 +1,19 @@
 ﻿@page "/"
-<div>
-    <ToDoList/>
-    <ToDoHandle/>
+<div style="height: 90vh; overflow-x:auto" class="container">
+        <CascadingValue Value="@ToDoGroupModel" Name="@nameof(ToDoGroupModel)">
+            <ToDoGroup/>
+        </CascadingValue>
 </div>
+<BButton Block Style="float:left;">新建列表</BButton>
+
+<style>
+    .container {
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+    }
+
+        .container::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+</style>
