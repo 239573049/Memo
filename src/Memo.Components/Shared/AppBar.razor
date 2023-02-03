@@ -1,0 +1,37 @@
+﻿<MBottomNavigation @bind-Value="value"
+                   BackgroundColor="@Color"
+                          Dark
+                          Shift>
+    <MButton Href="/">
+        <span>首页</span>
+        <MIcon>mdi-artstation</MIcon>
+    </MButton>
+
+    <MButton Href="/backlog">
+        <span>代办</span>
+        <MIcon>mdi-format-list-checks</MIcon>
+    </MButton>
+
+    <MButton Href="/info">
+        <span>我的</span>
+        <MIcon>mdi-ev-plug-tesla</MIcon>
+    </MButton>
+
+</MBottomNavigation>
+
+@code {
+
+    StringNumber value = 1;
+
+    string Color
+    {
+        get
+        {
+            if (value == 0) return "blue-grey";
+            if (value == 1) return "teal";
+            if (value == 2) return "brown";
+            return value == 3 ? "indigo" : "blue-grey";
+        }
+    }
+
+}
