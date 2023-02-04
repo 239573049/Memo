@@ -14,11 +14,10 @@ public static class MauiProgram
             });
 
         builder.Services.AddMauiBlazorWebView();
-        builder.Services.AddMemoComponent();
-
+        builder.Services.AddMemoComponent($"Data Source={Path.Combine(FileSystem.Current.CacheDirectory, "todo.db")};");
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
         return builder.Build();

@@ -1,9 +1,7 @@
-﻿namespace Memo.Components;
+﻿namespace Memo.Service.Memo;
 
-public class ToDoGroupModel
+public class ToDoGroup : EntityBase
 {
-    public Guid Id { get; set; }
-
     /// <summary>
     /// 列表图标
     /// </summary>
@@ -13,14 +11,10 @@ public class ToDoGroupModel
     /// 列表名称
     /// </summary>
     public string Title { get; set; }
-    
+
     /// <summary>
     /// 背景
     /// </summary>
     public string Background { get; set; }
 
-    /// <summary>
-    /// 数量
-    /// </summary>
-    public int Count { get; set; }
 }

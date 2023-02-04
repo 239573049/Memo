@@ -1,5 +1,4 @@
-﻿using Memo.Components.Model;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace Memo.Components.Components;
 
@@ -13,6 +12,6 @@ public partial class ToDoGroup
 
     private void GoAssignment(ToDoGroupModel model)
     {
-        NavigationManager.NavigateTo("/assignment");
+        NavigationManager.NavigateTo("/assignment/"+model.Id);
     }
 }

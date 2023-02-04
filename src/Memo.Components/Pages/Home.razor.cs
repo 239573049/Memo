@@ -1,190 +1,25 @@
-﻿using Memo.Components.Model;
+﻿using Memo.Service.Memo;
+using Microsoft.AspNetCore.Components;
 
 namespace Memo.Components.Pages;
 
 public partial class Home
 {
-    public List<ToDoGroupModel> ToDoGroupModel { get; set; } = new List<ToDoGroupModel>();
+    [Inject]
+    public IFreeSql FreeSql { get; set; }
 
-    protected override void OnInitialized()
+    public static List<ToDoGroupModel> ToDoGroupModel { get; set; } = new List<ToDoGroupModel>();
+
+    protected override async Task OnInitializedAsync()
     {
-        ToDoGroupModel.Add(new ToDoGroupModel()
+        ToDoGroupModel = (await FreeSql.Select<ToDoGroup>().ToListAsync()).Select(x => new ToDoGroupModel()
         {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
+            Title = x.Title,
+            Background = x.Background,
+            Icon = x.Icon,
+            Id = x.Id
+        }).ToList();
 
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-
-        ToDoGroupModel.Add(new ToDoGroupModel()
-        {
-            Title = "Home",
-            Count = 1,
-            Icon = "mdi-menu",
-            Background = "#2196F3"
-        });
-        base.OnInitialized();
+        await base.OnInitializedAsync();
     }
 }
