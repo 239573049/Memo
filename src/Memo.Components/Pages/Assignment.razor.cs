@@ -1,4 +1,5 @@
-﻿using Memo.Service.Memo;
+﻿using BlazorComponent;
+using Memo.Service.Memo;
 using Microsoft.AspNetCore.Components;
 
 namespace Memo.Components.Pages;
@@ -15,6 +16,9 @@ public partial class Assignment
     public Guid Id { get; set; }
 
     public ToDoGroupModel ToDoGroup { get; set; }
+
+    bool drawer;
+    StringNumber group;
 
     protected override async void OnInitialized()
     {

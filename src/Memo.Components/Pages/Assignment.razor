@@ -17,12 +17,37 @@
         </MAppBarTitle>
         <MSpacer></MSpacer>
 
-        <MButton Icon>
+        <MButton Icon OnClick="()=>drawer = !drawer">
             <MIcon>mdi-dots-vertical</MIcon>
         </MButton>
 
     </MAppBar>
     <MSheet Class="overflow-y-auto" Style="max-height: calc(73% - 14px);" Id="scrolling-sheet-2">
-        <MContainer Style="height: 1500px;"></MContainer>
+        <MContainer Style="height: 1500px;margin-top: 64px;">
+
+        </MContainer>
     </MSheet>
+    <MNavigationDrawer @bind-Value="drawer"
+                              Absolute
+                              Temporary>
+        <MList Nav
+               Dense>
+            <MListItemGroup @bind-Value="group"
+                            ActiveClass="deep-purple--text text--accent-4">
+                <MListItem>
+                    <MListItemIcon>
+                        <MIcon>mdi-home</MIcon>
+                    </MListItemIcon>
+                    <MListItemTitle>Home</MListItemTitle>
+                </MListItem>
+
+                <MListItem>
+                    <MListItemIcon>
+                        <MIcon>mdi-account</MIcon>
+                    </MListItemIcon>
+                    <MListItemTitle>Account</MListItemTitle>
+                </MListItem>
+            </MListItemGroup>
+        </MList>
+    </MNavigationDrawer>
 </MCard>
