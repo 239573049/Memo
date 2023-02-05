@@ -5,5 +5,6 @@
 
 ## 使用
 
-Masa Blazor [提供UI组件功能]
-Maui [提供平台支持跨平台]
+Masa Blazor （提供UI组件功能）
+
+Maui （提供平台支持跨平台）
